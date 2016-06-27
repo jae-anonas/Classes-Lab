@@ -29,7 +29,7 @@ public class Main {
         for (int i = 0; i < 20; i++)
             carList.add(new Car(getRandomCarColor(), getRandomCarBrand(), 125.0));
 
-        int getRandomCar = (new SecureRandom()).nextInt() % 19;
+        int getRandomCar = Math.abs((new SecureRandom()).nextInt() % 19);
         carList.get(getRandomCar).setIsReckless(true);
 
         System.out.println("Reckless car is the " + carList.get(getRandomCar).getColor() + " " + carList.get(getRandomCar).getBrand());
@@ -58,7 +58,7 @@ public class Main {
 
     public static String getRandomLightColor(){
         Random randomNum = new SecureRandom();
-        int num = randomNum.nextInt() % 3;
+        int num = Math.abs(randomNum.nextInt() % 3);
 
         switch (num){
             case 0:
@@ -74,7 +74,7 @@ public class Main {
 
     public static String getRandomCarColor(){
         Random randomNum = new SecureRandom();
-        int num = randomNum.nextInt() % 10;
+        int num = Math.abs(randomNum.nextInt() % 10);
 
         switch (num){
             case 0:
@@ -102,7 +102,7 @@ public class Main {
 
     public static String getRandomCarBrand(){
         Random randomNum = new SecureRandom();
-        int num = randomNum.nextInt() % 10;
+        int num = Math.abs(randomNum.nextInt() % 10);
 
         switch (num){
             case 0:
