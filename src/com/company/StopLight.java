@@ -18,7 +18,7 @@ public class StopLight {
     String mLightColor;
 
     public StopLight (String lightColor){
-        mLightColor = lightColor.toLowerCase();
+        this.setLightColor(lightColor);
     }
 
     public boolean isRed(){
@@ -38,8 +38,10 @@ public class StopLight {
         String color = lightColor.toLowerCase();
         if (color.equals("red") || color.equals("yellow") || color.equals("green"))
             mLightColor = color;
-        else
+        else {
             System.out.println("Color not accepted.");
+            mLightColor = "yellow";
+        }
     }
 
 }
