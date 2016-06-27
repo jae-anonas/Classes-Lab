@@ -35,8 +35,9 @@ public class Main {
         System.out.println("Reckless car is the " + carList.get(getRandomCar).getColor() + " " + carList.get(getRandomCar).getBrand());
 
 
-        for (int i = 0; i < 10; i++) {
-            String lightColor = getRandomLightColor();
+        for (int i = 0; i < 30; i++) {
+//            String lightColoer = getRandomLightColor();
+            String lightColor = getLightColor(i % 3);
             System.out.println("\n**********Setting stoplight color to: " + lightColor + " ****************\n");
             stpLight.setLightColor(lightColor);
             for (Car myCar:carList) {
@@ -53,6 +54,17 @@ public class Main {
                 System.out.println();
             }
             System.out.println();
+        }
+    }
+
+    public static String getLightColor(int color){
+        switch (color) {
+            case 0:
+                return "green";
+            case 1:
+                return "yellow";
+            default:
+                return "red";
         }
     }
 
